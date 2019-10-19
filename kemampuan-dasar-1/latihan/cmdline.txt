@@ -1,0 +1,1315 @@
+C:\WINDOWS\system32>taskkill /F /IM Taskmgr.exe
+SUCCESS: The process "Taskmgr.exe" with PID 12508 has been terminated.
+
+C:\WINDOWS\system32>mkdir c:\test\
+
+C:\WINDOWS\system32>dir c:\test\
+ Volume in drive C is WINDOWS
+ Volume Serial Number is B27A-6C92
+
+ Directory of c:\test
+
+18/10/2019  08:41    <DIR>          .
+18/10/2019  08:41    <DIR>          ..
+18/10/2019  08:41    <DIR>          test
+               0 File(s)              0 bytes
+               3 Dir(s)  48.962.355.200 bytes free
+
+C:\WINDOWS\system32>cd c:\test\test\
+
+c:\test\test>
+
+c:\test\test>rename test-lagi.txt test-lagi2.txt
+
+c:\test\test>dir
+ Volume in drive C is WINDOWS
+ Volume Serial Number is B27A-6C92
+
+ Directory of c:\test\test
+
+18/10/2019  08:45    <DIR>          .
+18/10/2019  08:45    <DIR>          ..
+18/10/2019  08:41                 0 test-lagi2.txt
+               1 File(s)              0 bytes
+               2 Dir(s)  48.963.510.272 bytes free
+
+c:\>del c:\test\test\test-lagi2.txt
+
+C:\WINDOWS\system32>ipconfig
+
+Windows IP Configuration
+
+
+Wireless LAN adapter Local Area Connection* 10:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::342b:a44:b827:2813%14
+   IPv4 Address. . . . . . . . . . . : 192.168.1.7
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::1%14
+                                       192.168.1.1
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+C:\WINDOWS\system32>cipher /w
+Displays or alters the encryption of directories [files] on NTFS partitions.
+
+  CIPHER [/E | /D | /C]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /K [/ECC:256|384|521]
+
+  CIPHER /R:filename [/SMARTCARD] [/ECC:256|384|521]
+
+  CIPHER /P:filename.cer
+
+  CIPHER /U [/N]
+
+  CIPHER /W:directory
+
+  CIPHER /X[:efsfile] [filename]
+
+  CIPHER /Y
+
+  CIPHER /ADDUSER [/CERTHASH:hash | /CERTFILE:filename | /USER:username]
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /FLUSHCACHE [/SERVER:servername]
+
+  CIPHER /REMOVEUSER /CERTHASH:hash
+         [/S:directory] [/B] [/H] [pathname [...]]
+
+  CIPHER /REKEY [pathname [...]]
+
+    /B        Abort if an error is encountered. By default, CIPHER continues
+              executing even if errors are encountered.
+    /C        Displays information on the encrypted file.
+    /D        Decrypts the specified files or directories.
+    /E        Encrypts the specified files or directories. Directories will be
+              marked so that files added afterward will be encrypted. The
+              encrypted file could become decrypted when it is modified if the
+              parent directory is not encrypted. It is recommended that you
+              encrypt the file and the parent directory.
+    /H        Displays files with the hidden or system attributes. These files
+              are omitted by default.
+    /K        Creates a new certificate and key for use with EFS. If this
+              option is chosen, all the other options will be ignored.
+
+              Note: By default, /K creates a certificate and key that conform
+                    to current group policy. If ECC is specified, a self-signed
+                    certificate will be created with the supplied key size.
+
+    /N        This option only works with /U. This will prevent keys being
+              updated. This is used to find all the encrypted files on the
+              local drives.
+    /R        Generates an EFS recovery key and certificate, then writes them
+              to a .PFX file (containing certificate and private key) and a
+              .CER file (containing only the certificate). An administrator may
+              add the contents of the .CER to the EFS recovery policy to create
+              the recovery key for users, and import the .PFX to recover
+              individual files. If SMARTCARD is specified, then writes the
+              recovery key and certificate to a smart card. A .CER file is
+              generated (containing only the certificate). No .PFX file is
+              generated.
+
+              Note: By default, /R creates an 2048-bit RSA recovery key and
+                    certificate. If ECC is specified, it must be followed by a
+                    key size of 256, 384, or 521.
+
+    /P        Creates a base64-encoded recovery-policy blob from the passed-in
+              certificate. This blob can be used to set DRA policy for
+              MDM deployments.
+    /S        Performs the specified operation on the given directory and all
+              files and subdirectories within it.
+    /U        Tries to touch all the encrypted files on local drives. This will
+              update user's file encryption key or recovery keys to the current
+              ones if they are changed. This option does not work with other
+              options except /N.
+    /W        Removes data from available unused disk space on the entire
+              volume. If this option is chosen, all other options are ignored.
+              The directory specified can be anywhere in a local volume. If it
+              is a mount point or points to a directory in another volume, the
+              data on that volume will be removed.
+    /X        Backup EFS certificate and keys into file filename. If efsfile is
+              provided, the current user's certificate(s) used to encrypt the
+              file will be backed up. Otherwise, the user's current EFS
+              certificate and keys will be backed up.
+    /Y        Displays your current EFS certificate thumbprint on the local PC.
+    /ADDUSER  Adds a user to the specified encrypted file(s). If CERTHASH is
+              provided, cipher will search for a certificate with this SHA1
+              hash. If CERTFILE is provided, cipher will extract the
+              certificate from the file. If USER is provided, cipher will
+              try to locate the user's certificate in Active Directory Domain
+              Services.
+    /FLUSHCACHE
+              Clears the calling user's EFS key cache on the specified server.
+              If servername is not provided, cipher clears the user's key cache
+              on the local machine.
+    /REKEY    Updates the specified encrypted file(s) to use the configured
+              EFS current key.
+    /REMOVEUSER
+              Removes a user from the specified file(s). CERTHASH must be the
+              SHA1 hash of the certificate to remove.
+
+    directory A directory path.
+    filename  A filename without extensions.
+    pathname  Specifies a pattern, file or directory.
+    efsfile   An encrypted file path.
+
+    Used without parameters, CIPHER displays the encryption state of the
+    current directory and any files it contains. You may use multiple directory
+    names and wildcards. You must put spaces between multiple parameters.
+
+C:\WINDOWS\system32>netstat
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:55699        cbs:55709              ESTABLISHED
+  TCP    127.0.0.1:55709        cbs:55699              ESTABLISHED
+  TCP    127.0.0.1:56060        cbs:56061              ESTABLISHED
+  TCP    127.0.0.1:56061        cbs:56060              ESTABLISHED
+  TCP    192.168.1.7:55651      253:https              ESTABLISHED
+  TCP    192.168.1.7:55714      188:5228               ESTABLISHED
+  TCP    192.168.1.7:55844      prg16-010:http         ESTABLISHED
+  TCP    192.168.1.7:56052      162.125.81.3:https     CLOSE_WAIT
+  TCP    192.168.1.7:56053      3:https                CLOSE_WAIT
+  TCP    192.168.1.7:56054      3:https                CLOSE_WAIT
+  TCP    192.168.1.7:56064      134:https              ESTABLISHED
+  TCP    192.168.1.7:56065      162.125.81.7:https     CLOSE_WAIT
+  TCP    192.168.1.7:56066      134:https              ESTABLISHED
+  TCP    192.168.1.7:56067      ec2-3-224-166-146:https  CLOSE_WAIT
+  TCP    192.168.1.7:56227      40.90.185.223:https    ESTABLISHED
+  TCP    192.168.1.7:56228      a-0001:https           ESTABLISHED
+  TCP    192.168.1.7:56230      13.107.18.11:https     ESTABLISHED
+  TCP    192.168.1.7:56232      254:https              ESTABLISHED
+  TCP    192.168.1.7:56234      222:https              ESTABLISHED
+  TCP    192.168.1.7:56237      sc-in-f94:https        ESTABLISHED
+  TCP    192.168.1.7:56238      135:https              CLOSE_WAIT
+  TCP    192.168.1.7:56239      254:https              ESTABLISHED
+  TCP    192.168.1.7:56240      131.253.33.254:https   ESTABLISHED
+  TCP    192.168.1.7:56243      r-172-58-45-5:http     TIME_WAIT
+  TCP    192.168.1.7:56246      r-178-58-45-5:http     TIME_WAIT
+
+C:\WINDOWS\system32>assoc
+.001=WinRAR
+.386=vxdfile
+.3g2=WMP11.AssocFile.3G2
+.3gp=WMP11.AssocFile.3GP
+.3gp2=WMP11.AssocFile.3G2
+.3gpp=WMP11.AssocFile.3GP
+.7z=WinRAR
+.8ba=Photoshop.PlugIn
+.8bc=Photoshop.PlugIn
+.8be=Photoshop.PlugIn
+.8bf=Photoshop.PlugIn
+.8bi=Photoshop.PlugIn
+.8bp=Photoshop.PlugIn
+.8bs=Photoshop.PlugIn
+.8bx=Photoshop.PlugIn
+.8by=Photoshop.PlugIn
+.8li=Photoshop.PlugIn
+.AAC=WMP11.AssocFile.ADTS
+.abr=Photoshop.BrushesFile
+.acb=Photoshop.ColorBooks
+.accountpicture-ms=accountpicturefile
+.acf=Photoshop.CustomFilterKernel
+.aco=Photoshop.SwatchesFile
+.act=Photoshop.ColorTableFile
+.acv=Photoshop.CurvesFile
+.ado=Photoshop.DuotoneSettingsFile
+.adobebridge=Adobe.adobebridge
+.ADT=WMP11.AssocFile.ADTS
+.ADTS=WMP11.AssocFile.ADTS
+.ahs=Photoshop.HalftoneScreens
+.ahu=Photoshop.HueSatFile
+.aif=WMP11.AssocFile.AIFF
+.aifc=WMP11.AssocFile.AIFF
+.aiff=WMP11.AssocFile.AIFF
+.alv=Photoshop.LevelsFile
+.amp=Photoshop.ArbitraryMapFile
+.ams=Photoshop.MonitorSetupFile
+.ani=anifile
+.api=Photoshop.PrintingInksFile
+.apk=Nox.apk
+.apl=Photoshop.AdobePlugIn
+.appcontent-ms=ApplicationContent
+.application=Application.Manifest
+.appref-ms=Application.Reference
+.arj=WinRAR
+.asa=aspfile
+.ase=Photoshop.ExchangeableSwatchFile.60
+.asf=WMP11.AssocFile.ASF
+.asl=Photoshop.Styles
+.asp=aspfile
+.ast=Photoshop.SepTablesFile
+.asv=Photoshop.ASVColAdjFile
+.asx=WMP11.AssocFile.ASX
+.atf=Photoshop.TransferFunctionsFile
+.atn=Photoshop.ActionsFile
+.au=WMP11.AssocFile.AU
+.ava=Photoshop.VariationsFile
+.avgconfig=avgconfigfile
+.avglic=avglicfile
+.avgsounds=avgsoundsfile
+.avgtheme=avgthemefile
+.avi=WMP11.AssocFile.AVI
+.axt=Photoshop.AXTAdjColFile
+.bat=batfile
+.binder=Dropbox.Binder
+.blg=Diagnostic.Perfmon.Document
+.blw=Photoshop.BWPresets
+.bmp=Paint.Picture
+.bscp=Bitvise.SSH.Client8.32.Profile
+.bz=WinRAR
+.bz2=WinRAR
+.cab=WinRAR
+.camp=campfile
+.cat=CATFile
+.cda=WMP11.AssocFile.CDA
+.cdmp=cdmpfile
+.cdx=aspfile
+.cdxml=Microsoft.PowerShellCmdletDefinitionXML.1
+.cer=CERFile
+.cha=Photoshop.CHAFile
+.chk=chkfile
+.chm=chm.file
+.cmd=cmdfile
+.collection=Bridge.Collection
+.com=comfile
+.compositefont=Windows.CompositeFont
+.cpl=cplfile
+.crl=CRLFile
+.crt=CERFile
+.csh=Photoshop.CustomShapes
+.css=CSSfile
+.cur=curfile
+.db=dbfile
+.dcp=Photoshop.DNGCameraProfile.60
+.dcpr=Photoshop.DNGCameraProfileRecipe.60
+.dctx=IMEDictionaryCompiler
+.dctxc=IMEDictionaryCompiler
+.dds=ddsfile
+.der=CERFile
+.desklink=CLSID\{9E56BE61-C50F-11CF-9A2C-00A0C90A90CE}
+.deskthemepack=desktopthemepackfile
+.diagcab=Diagnostic.Cabinet
+.diagcfg=Diagnostic.Config
+.diagpkg=Diagnostic.Document
+.dib=Paint.Picture
+.dll=dllfile
+.docx=docxfile
+.drv=drvfile
+.dsn=MSDASQL
+.dwfx=Windows.XPSReachViewer
+.eap=Photoshop.ExposureAdjustment
+.easmx=Windows.XPSReachViewer
+.edrwx=Windows.XPSReachViewer
+.emf=emffile
+.eml=Microsoft Email Message
+.eprtx=Windows.XPSReachViewer
+.evt=evtfile
+.evtx=evtxfile
+.exe=exefile
+.exr=Photoshop.OpenEXRFile.60
+.fdf=FoxitReader.FDFDoc
+.ffo=Photoshop.FileInfo
+.fl3=Photoshop.FL3FileType.60
+.flac=WMP11.AssocFile.FLAC
+.fon=fonfile
+.fxg=Photoshop.FXGFileType.60
+.gif=giffile
+.gmmp=gmmpfile
+.grd=Photoshop.Gradients
+.grp=MSProgramGroup
+.gz=WinRAR
+.hdd=progId_VirtualBox.Shell.hdd
+.hdr=Photoshop.PortableBitMapFile.60
+.hlp=hlpfile
+.hta=htafile
+.htm=htmlfile
+.html=htmlfile
+.icc=icmfile
+.icl=IconLibraryFile
+.icm=icmfile
+.ico=icofile
+.imesx=imesxfile
+.img=Windows.IsoFile
+.inf=inffile
+.ini=inifile
+.iros=Photoshop.IRSettings
+.irs=Photoshop.IRSettings
+.iso=WinRAR
+.jar=jarfile
+.jfif=pjpegfile
+.jnlp=JNLPFile
+.Job=JobObject
+.jod=Microsoft.Jet.OLEDB.4.0
+.jpe=jpegfile
+.jpeg=jpegfile
+.jpg=jpegfile
+.js=JSFile
+.JSE=JSEFile
+.jsxbin=JSXBINFile
+.jsxinc=JSXINCFile
+.jtx=Windows.XPSReachViewer
+.jxr=wdpfile
+.kmz=Photoshop.KMZFileType.60
+.kys=Photoshop.KYSFile.60
+.label=Label
+.ldbk=ldmnq.ldbk
+.lha=WinRAR
+.library-ms=LibraryFolder
+.lnk=lnkfile
+.log=txtfile
+.lz=WinRAR
+.lzh=WinRAR
+.m1v=WMP11.AssocFile.MPEG
+.M2T=WMP11.AssocFile.M2TS
+.M2TS=WMP11.AssocFile.M2TS
+.M2V=WMP11.AssocFile.MPEG
+.m3u=WMP11.AssocFile.m3u
+.m4a=WMP11.AssocFile.M4A
+.m4v=WMP11.AssocFile.MP4
+.mapimail=CLSID\{9E56BE60-C50F-11CF-9A2C-00A0C90A90CE}
+.md5=TeraCopy.MD5File
+.mht=mhtmlfile
+.mhtml=mhtmlfile
+.mid=WMP11.AssocFile.MIDI
+.midi=WMP11.AssocFile.MIDI
+.mk3d=WMP11.AssocFile.MK3D
+.mka=WMP11.AssocFile.MKA
+.mkv=WMP11.AssocFile.MKV
+.mlc=LpkSetup.1
+.mnu=Photoshop.MenuCustomizationFile.60
+.MOD=WMP11.AssocFile.MPEG
+.mov=WMP11.AssocFile.MOV
+.mp2=WMP11.AssocFile.MP3
+.mp2v=WMP11.AssocFile.MPEG
+.mp3=WMP11.AssocFile.MP3
+.mp4=WMP11.AssocFile.MP4
+.mp4v=WMP11.AssocFile.MP4
+.mpa=WMP11.AssocFile.MPEG
+.mpe=WMP11.AssocFile.MPEG
+.mpeg=WMP11.AssocFile.MPEG
+.mpg=WMP11.AssocFile.MPEG
+.mpv2=WMP11.AssocFile.MPEG
+.ms-windows-store-license=WindowsStore.License
+.msc=MSCFile
+.msi=Msi.Package
+.msp=Msi.Patch
+.msrcincident=RemoteAssistance.1
+.msstyles=msstylesfile
+.msu=Microsoft.System.Update.1
+.MTS=WMP11.AssocFile.M2TS
+.mxi=Adobe.Extension.Information
+.mxp=Adobe.Extension.Package
+.mydocs=CLSID\{ECF03A32-103D-11d2-854D-006008059367}
+.nfo=MSInfoFile
+.npbk=Nox.npbk
+.ocx=ocxfile
+.odt=odtfile
+.osdx=opensearchdescription
+.otf=otffile
+.ova=progId_VirtualBox.Shell.ova
+.ovf=progId_VirtualBox.Shell.ovf
+.oxps=Windows.XPSReachViewer
+.p10=P10File
+.p12=PFXFile
+.p7b=SPCFile
+.p7c=certificate_wab_auto_file
+.p7m=P7MFile
+.p7r=P7RFile
+.p7s=P7SFile
+.pano=Panoramic File
+.paper=Dropbox.Paper
+.papert=Dropbox.PaperT
+.partial=IE.AssocFile.PARTIAL
+.pat=Photoshop.Patterns
+.pbk=pbkfile
+.pbm=Photoshop.RadianceFile.60
+.pcd=Photoshop.PCDFile.60
+.pcx=Photoshop.PCXFile.60
+.pdd=Photoshop.PDDFile.60
+.pdp=Photoshop.PDPFile.60
+.perfmoncfg=Diagnostic.Perfmon.Config
+.pfm=pfmfile
+.pfx=PFXFile
+.php=PHPfile
+.pif=piffile
+.pka=PacketTracer6.3.Activity
+.pko=PKOFile
+.pkt=PacketTracer6.3
+.pkz=PacketTracer6.3.PKZ
+.ple=Photoshop.PLEFileType.60
+.pnf=pnffile
+.png=pngfile
+.ppdf=FoxitReader.PPDF
+.ppkg=Microsoft.ProvTool.Provisioning.1
+.prf=prffile
+.ps1=Microsoft.PowerShellScript.1
+.ps1xml=Microsoft.PowerShellXMLData.1
+.psb=Photoshop.PSBFile.60
+.psc1=Microsoft.PowerShellConsole.1
+.psd1=Microsoft.PowerShellData.1
+.psf=Photoshop.ProofSetup
+.psm1=Microsoft.PowerShellModule.1
+.psp=Photoshop.PreferencesFile
+.pssc=Microsoft.PowerShellSessionConfiguration.1
+.pxr=Photoshop.PXRFile.60
+.py=Python.File
+.pyc=Python.CompiledFile
+.pyd=Python.Extension
+.pyo=Python.CompiledFile
+.pyw=Python.NoConFile
+.pyz=Python.ArchiveFile
+.pyzw=Python.NoConArchiveFile
+.qds=SavedDsQuery
+.r00=WinRAR
+.r01=WinRAR
+.r02=WinRAR
+.r03=WinRAR
+.r04=WinRAR
+.r05=WinRAR
+.r06=WinRAR
+.r07=WinRAR
+.r08=WinRAR
+.r09=WinRAR
+.r10=WinRAR
+.r11=WinRAR
+.r12=WinRAR
+.r13=WinRAR
+.r14=WinRAR
+.r15=WinRAR
+.r16=WinRAR
+.r17=WinRAR
+.r18=WinRAR
+.r19=WinRAR
+.r20=WinRAR
+.r21=WinRAR
+.r22=WinRAR
+.r23=WinRAR
+.r24=WinRAR
+.r25=WinRAR
+.r26=WinRAR
+.r27=WinRAR
+.r28=WinRAR
+.r29=WinRAR
+.rar=WinRAR
+.rat=ratfile
+.RDP=RDP.File
+.reg=regfile
+.resmoncfg=Diagnostic.Resmon.Config
+.rev=WinRAR.REV
+.rle=rlefile
+.rll=dllfile
+.rmi=WMP11.AssocFile.MIDI
+.rtf=rtffile
+.ruel=RevoUninstallerPro.ruel
+.scf=SHCmdFile
+.scp=txtfile
+.scr=scrfile
+.sct=Photoshop.SCTFile.60
+.search-ms=SearchFolder
+.searchConnector-ms=SearchConnectorFolder
+.settingcontent-ms=SettingContent
+.sfcache=RDBFileProperties.1
+.sfv=TeraCopy.SFVFile
+.sha=TeraCopy.SHAFile
+.sha1=TeraCopy.SHAFile
+.sha256=TeraCopy.SHAFile
+.sha512=TeraCopy.SHAFile
+.shc=Photoshop.ShapeCurves
+.shh=Photoshop.SHHFile.60
+.snd=WMP11.AssocFile.AU
+.spc=SPCFile
+.spl=ShockwaveFlash.ShockwaveFlash
+.sst=CertificateStoreFile
+.sta=Photoshop.STAFile.60
+.svg=svgfile
+.swf=ShockwaveFlash.ShockwaveFlash
+.switchboard=Adobe.SwitchBoard.server
+.symlink=.symlink
+.sys=sysfile
+.tar=WinRAR
+.taz=WinRAR
+.tbz=WinRAR
+.tbz2=WinRAR
+.tga=Photoshop.TGAFile.60
+.tgz=WinRAR
+.theme=themefile
+.themepack=themepackfile
+.tif=TIFImage.Document
+.tiff=TIFImage.Document
+.tlp=Bitvise.SSH.Client.Tunnelier.8.32.Profile
+.tlz=WinRAR
+.tpl=Photoshop.ToolPresets
+.TS=WMP11.AssocFile.TTS
+.ttc=ttcfile
+.ttf=ttffile
+.TTS=WMP11.AssocFile.TTS
+.txt=txtfile
+.txz=WinRAR
+.u3d=Photoshop.U3DFileType.60
+.UDL=MSDASC
+.URL=InternetShortcut
+.uu=WinRAR
+.uue=WinRAR
+.VBE=VBEFile
+.vbox=progId_VirtualBox.Shell.vbox
+.vbox-extpack=progId_VirtualBox.Shell.vbox-extpack
+.vbs=VBSFile
+.vdi=progId_VirtualBox.Shell.vdi
+.vhd=progId_VirtualBox.Shell.vhd
+.vhdpmem=Windows.VhdPmemFile
+.vhdx=Windows.VhdFile
+.vmdk=progId_VirtualBox.Shell.vmdk
+.vxd=vxdfile
+.wab=wab_auto_file
+.wav=WMP11.AssocFile.WAV
+.wax=WMP11.AssocFile.WAX
+.wbcat=wbcatfile
+.wcx=wcxfile
+.wdp=wdpfile
+.webpnp=webpnpFile
+.website=Microsoft.Website
+.wm=WMP11.AssocFile.ASF
+.wma=WMP11.AssocFile.WMA
+.WMD=WMP11.AssocFile.WMD
+.wmdb=WMP.WMDBFile
+.wmf=wmffile
+.WMS=WMP11.AssocFile.WMS
+.wmv=WMP11.AssocFile.WMV
+.wmx=WMP11.AssocFile.ASX
+.wmz=WMP11.AssocFile.WMZ
+.wpl=WMP11.AssocFile.WPL
+.wsc=scriptletfile
+.WSF=WSFFile
+.WSH=WSHFile
+.wtfav=Wtlib.Favorite
+.wtx=txtfile
+.wve=WVEFile
+.wvx=WMP11.AssocFile.WVX
+.xaml=Windows.XamlDocument
+.xbap=Windows.Xbap
+.xdp=FoxitReader.XDPDoc
+.xfdf=FoxitReader.XFDFDoc
+.xht=xhtmlfile
+.xhtml=xhtmlfile
+.xml=xmlfile
+.xps=Windows.XPSReachViewer
+.xrm-ms=MSSppLicenseFile
+.xsl=xslfile
+.xxe=WinRAR
+.xz=WinRAR
+.z=WinRAR
+.ZFSendToTarget=CLSID\{888DCA60-FC0A-11CF-8F0F-00C04FD7D062}
+.zip=WinRAR.ZIP
+.zipx=WinRAR
+.zxp=Adobe.Extension.Package.ZipFormat
+
+C:\WINDOWS\system32>driverquery
+
+Module Name  Display Name           Driver Type   Link Date
+============ ====================== ============= ======================
+1394ohci     1394 OHCI Compliant Ho Kernel
+3ware        3ware                  Kernel        19/05/2015 05:28:03
+Acceleromete HP Mobile Data Protect Kernel        19/07/2019 13:47:59
+ACPI         Microsoft ACPI Driver  Kernel
+AcpiDev      ACPI Devices driver    Kernel
+acpiex       Microsoft ACPIEx Drive Kernel
+acpipagr     ACPI Processor Aggrega Kernel
+AcpiPmi      ACPI Power Meter Drive Kernel
+acpitime     ACPI Wake Alarm Driver Kernel
+Acx01000     Acx01000               Kernel
+ADP80XX      ADP80XX                Kernel        10/04/2015 03:49:48
+AFD          Ancillary Function Dri Kernel
+afunix       afunix                 Kernel
+ahcache      Application Compatibil Kernel
+amdacpksl    Service for AMD KSL Fi Kernel        26/03/2019 12:47:58
+amdgpio2     AMD GPIO Client Driver Kernel        30/08/2017 17:34:06
+amdi2c       AMD I2C Controller Ser Kernel        13/06/2018 12:25:43
+AmdK8        AMD K8 Processor Drive Kernel
+amdkmdag     amdkmdag               Kernel        15/05/2019 21:00:36
+amdkmdap     amdkmdap               Kernel        15/05/2019 20:52:08
+AmdPPM       AMD Processor Driver   Kernel
+amdpsp       AMD PSP Service        Kernel        28/10/2017 02:49:02
+amdsata      amdsata                Kernel        14/05/2015 19:14:52
+amdsbs       amdsbs                 Kernel        12/12/2012 04:21:44
+amdsfhkmdf   AMD Sensor Fusion Hub  Kernel        31/05/2018 17:17:56
+amdxata      amdxata                Kernel        01/05/2015 07:55:35
+AndroidKerne AndroidKernel          Kernel        15/08/2019 18:50:36
+AppID        AppID Driver           Kernel
+applockerflt Smartlocker Filter Dri Kernel
+arcsas       Adaptec SAS/SATA-II RA Kernel        10/04/2015 02:12:07
+AsyncMac     RAS Asynchronous Media Kernel
+atapi        IDE Channel            Kernel
+AtiHDAudioSe AMD Function Driver fo Kernel        16/11/2017 12:12:15
+avgArDisk    avgArDisk              Kernel        06/09/2019 17:09:53
+avgArPot     avgArPot               Kernel        06/09/2019 17:09:54
+avgbidsdrive avgbidsdriver          File System   06/09/2019 16:31:17
+avgbidsh     avgbidsh               File System   06/09/2019 16:31:15
+avgbuniv     avgbuniv               File System   06/09/2019 16:30:56
+avgElam      avgElam                Kernel        03/09/2019 15:45:56
+avgKbd       avgKbd                 Kernel        06/09/2019 17:09:55
+avgMonFlt    avgMonFlt              File System   06/09/2019 17:09:55
+avgRdr       avgRdr                 Kernel        06/09/2019 17:09:58
+avgRvrt      avgRvrt                Kernel        06/09/2019 17:09:54
+avgSnx       avgSnx                 File System   26/09/2019 19:03:04
+avgSP        avgSP                  File System   26/09/2019 19:03:19
+avgStm       avgStm                 Kernel        06/09/2019 17:10:17
+avgVmm       avgVmm                 Kernel        06/09/2019 17:09:55
+b06bdrv      QLogic Network Adapter Kernel        25/05/2016 14:03:08
+bam          Background Activity Mo Kernel
+BasicDisplay BasicDisplay           Kernel
+BasicRender  BasicRender            Kernel
+bcmfn2       bcmfn2 Service         Kernel        01/11/2016 09:09:15
+Beep         Beep                   Kernel
+bindflt      Windows Bind Filter Dr File System
+bowser       Browser                File System
+BthA2dp      Microsoft Bluetooth A2 Kernel
+BthEnum      Bluetooth Enumerator S Kernel
+BthHFAud     Microsoft Bluetooth Ha Kernel
+BthHFEnum    Microsoft Bluetooth Ha Kernel
+BthLEEnum    Bluetooth Low Energy D Kernel
+BthMini      Bluetooth Radio Driver Kernel
+BTHMODEM     Bluetooth Modem Commun Kernel
+BthPan       Bluetooth Device (Pers Kernel
+BTHPORT      Bluetooth Port Driver  Kernel
+BTHUSB       Bluetooth Radio USB Dr Kernel
+bttflt       Microsoft Hyper-V VHDP Kernel
+buttonconver Service for Portable D Kernel
+CAD          Charge Arbitration Dri Kernel
+cdfs         CD/DVD File System Rea File System
+cdrom        CD-ROM Driver          Kernel
+cht4iscsi    cht4iscsi              Kernel        08/05/2018 20:27:04
+cht4vbd      Chelsio Virtual Bus Dr Kernel        08/05/2018 20:23:38
+circlass     Consumer IR Devices    Kernel
+CldFlt       Windows Cloud Files Fi File System
+CLFS         Common Log (CLFS)      Kernel
+CmBatt       Microsoft ACPI Control Kernel
+CNG          CNG                    Kernel
+cnghwassist  CNG Hardware Assist al Kernel
+CompositeBus Composite Bus Enumerat Kernel
+condrv       Console Driver         Kernel
+dam          Desktop Activity Moder Kernel
+Dfsc         DFS Namespace Client D File System
+disk         Disk Driver            Kernel
+dmvsc        dmvsc                  Kernel
+drmkaud      Microsoft Trusted Audi Kernel
+DXGKrnl      LDDM Graphics Subsyste Kernel
+ebdrv        QLogic 10 Gigabit Ethe Kernel        25/05/2016 14:01:05
+EhStorClass  Enhanced Storage Filte Kernel
+EhStorTcgDrv Microsoft driver for s Kernel
+ErrDev       Microsoft Hardware Err Kernel
+exfat        exFAT File System Driv File System
+fastfat      FAT12/16/32 File Syste File System
+fdc          Floppy Disk Controller Kernel
+FileCrypt    FileCrypt              File System
+FileInfo     File Information FS Mi File System
+Filetrace    Filetrace              File System
+flpydisk     Floppy Disk Driver     Kernel
+FltMgr       FltMgr                 File System
+FsDepends    File System Dependency File System
+fvevol       BitLocker Drive Encryp Kernel
+gencounter   Microsoft Hyper-V Gene Kernel
+genericusbfn Generic USB Function C Kernel
+GPIOClx0101  Microsoft GPIO Class E Kernel
+GpuEnergyDrv GPU Energy Driver      Kernel
+HdAudAddServ Microsoft 1.1 UAA Func Kernel
+HDAudBus     Microsoft UAA Bus Driv Kernel
+HidBatt      HID UPS Battery Driver Kernel
+HidBth       Microsoft Bluetooth HI Kernel
+hidi2c       Microsoft I2C HID Mini Kernel
+hidinterrupt Common Driver for HID  Kernel
+HidIr        Microsoft Infrared HID Kernel
+hidspi       Microsoft SPI HID Mini Kernel
+HidUsb       Microsoft HID Class Dr Kernel
+HPCustomCapD HP Application Driver  Kernel        20/09/2017 05:13:13
+hpdskflt     HP Disk Filter         Kernel        19/07/2019 13:47:54
+HpSAMD       HpSAMD                 Kernel        27/03/2013 04:36:54
+HTTP         HTTP Service           Kernel
+hvcrash      hvcrash                Kernel
+hvservice    Hypervisor/Virtual Mac Kernel
+HwNClx0101   Microsoft Hardware Not Kernel
+hwpolicy     Hardware Policy Driver Kernel
+hyperkbd     hyperkbd               Kernel
+HyperVideo   HyperVideo             Kernel
+i8042prt     PS/2 Keyboard and Mous Kernel
+iagpio       Intel Serial IO GPIO C Kernel        23/07/2018 16:04:46
+iai2c        Intel(R) Serial IO I2C Kernel        23/07/2018 16:04:39
+iaLPSS2i_GPI Intel(R) Serial IO GPI Kernel        19/04/2018 14:53:24
+iaLPSS2i_GPI Intel(R) Serial IO GPI Kernel        17/04/2018 16:25:15
+iaLPSS2i_GPI Intel(R) Serial IO GPI Kernel        17/04/2018 14:07:03
+iaLPSS2i_GPI Intel(R) Serial IO GPI Kernel        16/05/2018 12:46:36
+iaLPSS2i_I2C Intel(R) Serial IO I2C Kernel        19/04/2018 14:52:58
+iaLPSS2i_I2C Intel(R) Serial IO I2C Kernel        17/04/2018 16:24:40
+iaLPSS2i_I2C Intel(R) Serial IO I2C Kernel        17/04/2018 14:06:22
+iaLPSS2i_I2C Intel(R) Serial IO I2C Kernel        16/05/2018 12:46:02
+iaLPSSi_GPIO Intel(R) Serial IO GPI Kernel        02/02/2015 16:00:09
+iaLPSSi_I2C  Intel(R) Serial IO I2C Kernel        24/02/2015 22:52:07
+iaStorAVC    Intel Chipset SATA RAI Kernel        07/02/2018 18:53:36
+iaStorV      Intel RAID Controller  Kernel        12/04/2011 01:48:16
+ibbus        Mellanox InfiniBand Bu Kernel        25/04/2018 23:29:09
+IDMWFP       IDMWFP                 Kernel        19/12/2018 21:52:11
+IndirectKmd  Indirect Displays Kern Kernel
+IntcAzAudAdd Service for Realtek HD Kernel        14/05/2019 18:25:05
+intelide     intelide               Kernel
+intelpep     Intel(R) Power Engine  Kernel
+intelpmax    Intel Power Limit Driv Kernel
+intelppm     Intel Processor Driver Kernel
+iorate       Disk I/O Rate Filter D Kernel
+IpFilterDriv IP Traffic Filter Driv Kernel
+IPMIDRV      IPMIDRV                Kernel
+IPNAT        IP Network Address Tra Kernel
+IPT          IPT                    Kernel
+isapnp       isapnp                 Kernel
+iScsiPrt     iScsiPort Driver       Kernel
+ItSas35i     ItSas35i               Kernel        03/05/2018 16:57:21
+kbdclass     Keyboard Class Driver  Kernel
+kbdhid       Keyboard HID Driver    Kernel
+kdnic        Microsoft Kernel Debug Kernel
+KSecDD       KSecDD                 Kernel
+KSecPkg      KSecPkg                Kernel
+ksthunk      Kernel Streaming Thunk Kernel
+LdBoxDrv     LdBoxDrv               Kernel        28/12/2016 09:23:57
+lltdio       Link-Layer Topology Di Kernel
+LSI_SAS      LSI_SAS                Kernel        26/03/2015 02:36:48
+LSI_SAS2i    LSI_SAS2i              Kernel        02/08/2017 20:29:59
+LSI_SAS3i    LSI_SAS3i              Kernel        02/05/2018 16:40:30
+LSI_SSS      LSI_SSS                Kernel        16/03/2013 06:39:38
+luafv        UAC File Virtualizatio File System
+mausbhost    MA-USB Host Controller Kernel
+mausbip      MA-USB IP Filter Drive Kernel
+MbbCx        MBB Network Adapter Cl Kernel
+megasas      megasas                Kernel        05/03/2015 09:36:29
+megasas2i    megasas2i              Kernel        24/07/2017 16:46:09
+megasas35i   megasas35i             Kernel        07/12/2018 00:45:11
+megasr       megasr                 Kernel        04/06/2013 05:02:39
+Microsoft_Bl Microsoft Bluetooth Av Kernel
+mlx4_bus     Mellanox ConnectX Bus  Kernel        25/04/2018 23:29:43
+MMCSS        Multimedia Class Sched Kernel
+Modem        Modem                  Kernel
+monitor      Microsoft Monitor Clas Kernel
+mouclass     Mouse Class Driver     Kernel
+mouhid       Mouse HID Driver       Kernel
+mountmgr     Mount Point Manager    Kernel
+mpsdrv       Windows Defender Firew Kernel
+MRxDAV       WebDav Client Redirect File System
+mrxsmb       SMB MiniRedirector Wra File System
+mrxsmb20     SMB 2.0 MiniRedirector File System
+MsBridge     Microsoft MAC Bridge   Kernel
+Msfs         Msfs                   File System
+msgpiowin32  Common Driver for Butt Kernel
+mshidkmdf    Pass-through HID to KM Kernel
+mshidumdf    Pass-through HID to UM Kernel
+msisadrv     msisadrv               Kernel
+MSKSSRV      Microsoft Streaming Se Kernel
+MsLldp       Microsoft Link-Layer D Kernel
+MSPCLOCK     Microsoft Streaming Cl Kernel
+MSPQM        Microsoft Streaming Qu Kernel
+MsRPC        MsRPC                  Kernel
+mssmbios     Microsoft System Manag Kernel
+MSTEE        Microsoft Streaming Te Kernel
+MTConfig     Microsoft Input Config Kernel
+Mup          Mup                    File System
+mvumis       mvumis                 Kernel        24/05/2014 03:39:04
+NativeWifiP  NativeWiFi Filter      Kernel
+ndfltr       NetworkDirect Service  Kernel        25/04/2018 23:28:08
+NDIS         NDIS System Driver     Kernel
+NdisCap      Microsoft NDIS Capture Kernel
+NdisImPlatfo Microsoft Network Adap Kernel
+NdisTapi     Remote Access NDIS TAP Kernel
+Ndisuio      NDIS Usermode I/O Prot Kernel
+NdisVirtualB Microsoft Virtual Netw Kernel
+NdisWan      Remote Access NDIS WAN Kernel
+ndiswanlegac Remote Access LEGACY N Kernel
+NDKPing      NDKPing Driver         Kernel
+ndproxy      NDIS Proxy Driver      Kernel
+Ndu          Windows Network Data U Kernel
+NetAdapterCx Network Adapter Wdf Cl Kernel
+NetBIOS      NetBIOS Interface      File System
+NetBT        NetBT                  Kernel
+netvsc       netvsc                 Kernel
+Npfs         Npfs                   File System
+npsvctrig    Named pipe service tri Kernel
+nsiproxy     NSI Proxy Service Driv Kernel
+Ntfs         Ntfs                   File System
+Null         Null                   Kernel
+nvdimm       Microsoft NVDIMM devic Kernel
+nvraid       nvraid                 Kernel        22/04/2014 01:28:42
+nvstor       nvstor                 Kernel        22/04/2014 01:34:03
+Parport      Parallel port driver   Kernel
+partmgr      Partition driver       Kernel
+pci          PCI Bus Driver         Kernel
+pciide       pciide                 Kernel
+pcmcia       pcmcia                 Kernel
+pcw          Performance Counters f Kernel
+pdc          pdc                    Kernel
+PEAUTH       PEAUTH                 Kernel
+percsas2i    percsas2i              Kernel        15/03/2016 07:50:11
+percsas3i    percsas3i              Kernel        02/06/2018 04:47:02
+PktMon       Packet Monitor Driver  Kernel
+pmem         Microsoft persistent m Kernel
+PNPMEM       Microsoft Memory Modul Kernel
+portcfg      portcfg                Kernel
+PptpMiniport WAN Miniport (PPTP)    Kernel
+Processor    Processor Driver       Kernel
+Psched       QoS Packet Scheduler   Kernel
+QWAVEdrv     QWAVE driver           Kernel
+Ramdisk      Windows RAM Disk Drive Kernel
+RasAcd       Remote Access Auto Con Kernel
+RasAgileVpn  WAN Miniport (IKEv2)   Kernel
+Rasl2tp      WAN Miniport (L2TP)    Kernel
+RasPppoe     Remote Access PPPOE Dr Kernel
+RasSstp      WAN Miniport (SSTP)    Kernel
+rdbss        Redirected Buffering S File System
+rdpbus       Remote Desktop Device  Kernel
+RDPDR        Remote Desktop Device  Kernel
+RdpVideoMini Remote Desktop Video M Kernel
+rdyboost     ReadyBoost             Kernel
+ReFS         ReFS                   File System
+ReFSv1       ReFSv1                 File System
+Revoflt      Revoflt                File System   30/12/2009 16:19:49
+RFCOMM       Bluetooth Device (RFCO Kernel
+rhproxy      Resource Hub proxy dri Kernel
+rspndr       Link-Layer Topology Di Kernel
+RtkBtFilter  Realtek Bluetooth Filt Kernel        01/11/2018 08:51:00
+RTSPER       Realtek PCIE Card Read Kernel        19/10/2017 13:36:48
+RTWlanE      Realtek Wireless LAN 8 Kernel        03/05/2019 15:30:12
+s3cap        s3cap                  Kernel
+sbp2port     SBP-2 Transport/Protoc Kernel
+scfilter     Smart card PnP Class F Kernel
+scmbus       Microsoft Storage Clas Kernel
+sdbus        sdbus                  Kernel
+SDFRd        SDF Reflector          Kernel
+sdstor       SD Storage Port Driver Kernel
+SerCx        Serial UART Support Li Kernel
+SerCx2       Serial UART Support Li Kernel
+Serenum      Serenum Filter Driver  Kernel
+Serial       Serial port driver     Kernel
+sermouse     Serial Mouse Driver    Kernel
+sfloppy      High-Capacity Floppy D Kernel
+SgrmAgent    System Guard Runtime M Kernel
+SiSRaid2     SiSRaid2               Kernel        25/09/2008 01:28:20
+SiSRaid4     SiSRaid4               Kernel        02/10/2008 04:56:04
+SmartSAMD    SmartSAMD              Kernel        17/04/2018 22:29:21
+SmbDrv       SmbDrv                 Kernel        30/07/2019 09:24:24
+SmbDrvI      SmbDrvI                Kernel        03/02/2018 06:31:39
+spaceport    Storage Spaces Driver  Kernel
+SpatialGraph Holographic Spatial Gr Kernel
+SpbCx        Simple Peripheral Bus  Kernel
+srv2         Server SMB 2.xxx Drive File System
+srvnet       srvnet                 File System
+stexstor     stexstor               Kernel        27/11/2012 07:02:51
+storahci     Microsoft Standard SAT Kernel
+storflt      Microsoft Hyper-V Stor Kernel
+stornvme     Microsoft Standard NVM Kernel
+storqosflt   Storage QoS Filter Dri File System
+storufs      Microsoft Universal Fl Kernel
+storvsc      storvsc                Kernel
+swenum       Software Bus Driver    Kernel
+Synth3dVsc   Synth3dVsc             Kernel
+SynTP        Synaptics TouchPad Dri Kernel        30/07/2019 09:22:36
+Tcpip        TCP/IP Protocol Driver Kernel
+Tcpip6       @todo.dll,-100;Microso Kernel
+tcpipreg     TCP/IP Registry Compat Kernel
+tdx          NetIO Legacy TDI Suppo Kernel
+terminpt     Microsoft Remote Deskt Kernel
+TPM          TPM                    Kernel
+TsUsbFlt     Remote Desktop USB Hub Kernel
+TsUsbGD      Remote Desktop Generic Kernel
+tunnel       Microsoft Tunnel Minip Kernel
+UASPStor     USB Attached SCSI (UAS Kernel
+UcmCx0101    USB Connector Manager  Kernel
+UcmTcpciCx01 UCM-TCPCI KMDF Class E Kernel
+UcmUcsiAcpiC UCM-UCSI ACPI Client   Kernel
+UcmUcsiCx010 UCM-UCSI KMDF Class Ex Kernel
+Ucx01000     USB Host Support Libra Kernel
+UdeCx        USB Device Emulation S Kernel
+udfs         udfs                   File System
+UEFI         Microsoft UEFI Driver  Kernel
+Ufx01000     USB Function Class Ext Kernel
+UfxChipidea  USB Chipidea Controlle Kernel
+ufxsynopsys  USB Synopsys Controlle Kernel
+umbus        UMBus Enumerator Drive Kernel
+UmPass       Microsoft UMPass Drive Kernel
+UrsChipidea  Chipidea USB Role-Swit Kernel
+UrsCx01000   USB Role-Switch Suppor Kernel
+UrsSynopsys  Synopsys USB Role-Swit Kernel
+usbaudio     USB Audio Driver (WDM) Kernel
+usbaudio2    USB Audio 2.0 Service  Kernel
+usbccgp      Microsoft USB Generic  Kernel
+usbcir       eHome Infrared Receive Kernel
+usbehci      Microsoft USB 2.0 Enha Kernel
+usbhub       Microsoft USB Standard Kernel
+USBHUB3      SuperSpeed Hub         Kernel
+usbohci      Microsoft USB Open Hos Kernel
+usbprint     Microsoft USB PRINTER  Kernel
+usbser       Microsoft USB Serial D Kernel
+USBSTOR      USB Mass Storage Drive Kernel
+usbuhci      Microsoft USB Universa Kernel
+usbvideo     USB Video Device (WDM) Kernel
+USBXHCI      USB xHCI Compliant Hos Kernel
+VBoxDrv      VirtualBox Service     Kernel        26/01/2019 01:14:07
+VBoxUSBMon   VirtualBox USB Monitor Kernel        26/01/2019 01:13:48
+vdrvroot     Microsoft Virtual Driv Kernel
+VerifierExt  Driver Verifier Extens Kernel
+vhdmp        vhdmp                  Kernel
+vhf          Virtual HID Framework  Kernel
+Vid          Vid                    Kernel
+vmbus        Virtual Machine Bus    Kernel
+VMBusHID     VMBusHID               Kernel
+vmgid        Microsoft Hyper-V Gues Kernel
+volmgr       Volume Manager Driver  Kernel
+volmgrx      Dynamic Volume Manager Kernel
+volsnap      Volume Shadow Copy dri Kernel
+volume       Volume driver          Kernel
+vpci         Microsoft Hyper-V Virt Kernel
+vsmraid      vsmraid                Kernel        23/04/2014 02:21:41
+VSTXRAID     VIA StorX Storage RAID Kernel        22/01/2013 02:00:28
+vwifibus     Virtual Wireless Bus D Kernel
+vwififlt     Virtual WiFi Filter Dr Kernel
+vwifimp      Virtual WiFi Miniport  Kernel
+WacomPen     Wacom Serial Pen HID D Kernel
+wanarp       Remote Access IP ARP D Kernel
+wanarpv6     Remote Access IPv6 ARP Kernel
+wcifs        Windows Container Isol File System
+wcnfs        Windows Container Name File System
+WdBoot       Windows Defender Antiv Kernel
+Wdf01000     Kernel Mode Driver Fra Kernel
+WdFilter     Windows Defender Antiv File System
+wdiwifi      WDI Driver Framework   Kernel
+WdmCompanion WdmCompanionFilter     Kernel
+WdNisDrv     Windows Defender Antiv Kernel
+WFPLWFS      Microsoft Windows Filt Kernel
+WIMMount     WIMMount               File System
+WindowsTrust Windows Trusted Execut Kernel
+WindowsTrust Microsoft Windows Trus Kernel
+WinMad       WinMad Service         Kernel        25/04/2018 23:27:32
+WinNat       Windows NAT Driver     Kernel
+WinQuic      WinQuic                Kernel
+WINUSB       WinUsb Driver          Kernel
+WinVerbs     WinVerbs Service       Kernel        25/04/2018 23:28:00
+WirelessButt HP Wireless Button Dri Kernel        29/07/2019 19:56:18
+WmiAcpi      Microsoft Windows Mana Kernel
+Wof          Windows Overlay File S File System
+WpdUpFltr    WPD Upper Class Filter Kernel
+ws2ifsl      Winsock IFS Driver     Kernel
+WudfPf       User Mode Driver Frame Kernel
+WUDFRd       Windows Driver Foundat Kernel
+WUDFWpdFs    WPD File System driver Kernel
+WUDFWpdMtp   WUDFWpdMtp             Kernel
+xboxgip      Xbox Game Input Protoc Kernel
+xinputhid    XINPUT HID Filter Driv Kernel
+
+C:\WINDOWS\system32>fc /c "C:\Users\thoms\OneDrive\Documents\test1.docx" "C:\Users\thoms\OneDrive\Documents\test2.docx"
+Comparing files C:\USERS\THOMS\ONEDRIVE\DOCUMENTS\test1.docx and C:\USERS\THOMS\ONEDRIVE\DOCUMENTS\TEST2.DOCX
+***** C:\USERS\THOMS\ONEDRIVE\DOCUMENTS\test1.docx
+!
+█Sz╞δ
+
+***** C:\USERS\THOMS\ONEDRIVE\DOCUMENTS\TEST2.DOCX
+!
+Å²Q
+ε
+
+*****
+
+***** C:\USERS\THOMS\ONEDRIVE\DOCUMENTS\test1.docx
+
+word/document.xmlñûKo█0Ç∩÷▀S∙æ╕«╤ñXù«Φa@░¼τAæ█ê⌡Çñ─═~²(?Γ▐
+ë▌.'òB%╚w=╖·ôJ¬5╠≈≤#╓Nâ#o├hë┬%[αæÿ'╕£.£╒╬├≥≤º√2N90╩═\╟Ñ$'3FiÆQå⌡
++C▀:åw5dÄεP╘∙#@í∩⌡Q┴╒¿Y»zá┘(x╒#═╟æ■\8ÄΣ≈I╖πHAƒì#⌡╩ë⌡\H╩A╣èa]ò"å╒■ º
+û╪Σ█╝╚═ ÿn╪bp╬≈#<½3ü╔╒ä[─DBï i)bßÅ√Θ┘▐║╫÷M╙Z¿!±╫&½µp¿"GèÉ┴uû╦≤gciá╠Z╚±╜ Ä¼h╟ò╥╕]■w<¡ΩTv└!ε7∙gEφ∙√D╧░"q╢Γ┬▀s╢₧0¿┬nΓ
+Q⌐╣H«7≡
+i~Æ|`I╖î:¢X^p4╜3o1·─║¡^╩⌠c╒≥¼─Av┤ⁿc┤ùn∩ù÷╛é╒T▌σN╨sfôa   G#±K╩à┬█<éÜ@L¬░_Xòë▌t╬₧
+[æ£l+A3ï%V°V█{t²Y0≈£J
+¡▒╥╣╖Ü{εΩ      ñ1<KÆ╟uW~Φå││h¡¼0è\y«Φ
+c5■╩·TS╦╡▓ì¬¢≤╞q▒p(ƒ╛n┤╝GìuúçÜö▒Yb█3╡¼V∞φ%░1p{ÇÑ-∞╩KÄdΩ╫│x─do)▌╪'₧£G╓xi╒Ü│VCQà¢n~âN╧╗│wNg≡FAT╧(╙∩╪ìÇ╠¢═Ωⁿσif║ε
+V#X╫/ΦεB¢Q£Pÿ≈╓ìlw'ä╣ΦªSu½8╩ÿêBâTKLh=ª├█±Y┘
+ëï£╙uxäm≡u▄╒o]:¿{n.
+
+C:\WINDOWS\system32>ping google.com -t
+
+Pinging google.com [216.239.38.120] with 32 bytes of data:
+Reply from 216.239.38.120: bytes=32 time=122ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=135ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=251ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=61ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=74ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=93ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=106ms TTL=53
+Reply from 216.239.38.120: bytes=32 time=118ms TTL=53
+
+Ping statistics for 216.239.38.120:
+    Packets: Sent = 8, Received = 8, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 61ms, Maximum = 251ms, Average = 120ms
+
+C:\WINDOWS\system32>pathping www.detik.com
+
+Tracing route to detik.com [103.49.221.211]
+over a maximum of 30 hops:
+  0  DESKTOP-2TNASMP [192.168.1.7]
+  1     *        *        *
+Computing statistics for 0 seconds...
+            Source to Here   This Node/Link
+Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct  Address
+  0                                           DESKTOP-2TNASMP [192.168.1.7]
+
+
+C:\WINDOWS\system32>tracert www.detik.com
+
+Tracing route to detik.com [103.49.221.211]
+over a maximum of 30 hops:
+
+  1     *        *        *     Request timed out.
+  2     9 ms     8 ms    33 ms  36.81.8.1
+  3     6 ms     4 ms     4 ms  197.1.160.125.in-addr.arpa [125.160.1.197]
+  4     6 ms     3 ms     7 ms  180.252.3.241
+  5    16 ms   109 ms    14 ms  telkomnet-as17974.iix.net.id [103.28.74.59]
+  6    19 ms    16 ms    82 ms  detik-as24211.iix.net.id [103.28.74.136]
+  7    18 ms    40 ms    17 ms  s211-cast-211-221-49-103.detik.com [103.49.221.211]
+
+Trace complete.
+
+C:\WINDOWS\system32>powercfg /a
+The following sleep states are available on this system:
+    Standby (S3)
+    Hibernate
+    Hybrid Sleep
+    Fast Startup
+
+The following sleep states are not available on this system:
+    Standby (S1)
+        The system firmware does not support this standby state.
+
+    Standby (S2)
+        The system firmware does not support this standby state.
+
+    Standby (S0 Low Power Idle)
+        The system firmware does not support this standby state.
+
+
+C:\WINDOWS\system32>shutdown /l
+
+
+C:\WINDOWS\system32>sfc /scannow
+
+Beginning system scan.  This process will take some time.
+
+Beginning verification phase of system scan.
+Verification 50% complete.
+
+
+C:\WINDOWS\system32>tasklist
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0      1.748 K
+Registry                       120 Services                   0    106.164 K
+smss.exe                       484 Services                   0      1.056 K
+csrss.exe                      748 Services                   0      4.112 K
+wininit.exe                    852 Services                   0      4.544 K
+services.exe                  1000 Services                   0      7.612 K
+lsass.exe                     1012 Services                   0     17.712 K
+svchost.exe                    548 Services                   0      1.872 K
+fontdrvhost.exe               1032 Services                   0      2.452 K
+svchost.exe                   1072 Services                   0     31.128 K
+WUDFHost.exe                  1116 Services                   0      4.568 K
+svchost.exe                   1200 Services                   0     16.332 K
+svchost.exe                   1248 Services                   0      6.636 K
+svchost.exe                   1448 Services                   0      6.176 K
+svchost.exe                   1460 Services                   0      9.052 K
+svchost.exe                   1468 Services                   0      8.420 K
+svchost.exe                   1544 Services                   0      3.356 K
+svchost.exe                   1572 Services                   0      8.228 K
+svchost.exe                   1584 Services                   0      9.924 K
+svchost.exe                   1820 Services                   0     12.108 K
+svchost.exe                   1828 Services                   0     12.424 K
+svchost.exe                   1836 Services                   0      6.040 K
+svchost.exe                   1860 Services                   0      9.392 K
+svchost.exe                   1912 Services                   0      3.280 K
+svchost.exe                   1996 Services                   0      5.592 K
+svchost.exe                    932 Services                   0      4.904 K
+svchost.exe                   1328 Services                   0      5.240 K
+svchost.exe                   2072 Services                   0      5.364 K
+svchost.exe                   2196 Services                   0      4.788 K
+svchost.exe                   2240 Services                   0      7.548 K
+svchost.exe                   2248 Services                   0      7.132 K
+TeraCopyService.exe           2308 Services                   0      2.828 K
+svchost.exe                   2328 Services                   0      8.496 K
+svchost.exe                   2436 Services                   0      8.716 K
+svchost.exe                   2592 Services                   0      4.828 K
+svchost.exe                   2600 Services                   0      3.860 K
+svchost.exe                   2676 Services                   0     16.004 K
+AppHelperCap.exe              2820 Services                   0      4.052 K
+NetworkCap.exe                2832 Services                   0      6.044 K
+dasHost.exe                   2840 Services                   0      2.404 K
+TouchpointAnalyticsClient     2852 Services                   0     38.428 K
+SysInfoCap.exe                2860 Services                   0     13.048 K
+svchost.exe                   2928 Services                   0      9.256 K
+svchost.exe                   3056 Services                   0     11.012 K
+svchost.exe                   2432 Services                   0      6.212 K
+svchost.exe                   3152 Services                   0      7.424 K
+svchost.exe                   3292 Services                   0     18.260 K
+svchost.exe                   3416 Services                   0      4.600 K
+svchost.exe                   3424 Services                   0      5.340 K
+SynTPEnhService.exe           3516 Services                   0      6.736 K
+TitanService.exe              3596 Services                   0      7.248 K
+atiesrxx.exe                  3728 Services                   0      3.584 K
+svchost.exe                   3816 Services                   0      4.808 K
+svchost.exe                   3880 Services                   0      3.156 K
+svchost.exe                   3888 Services                   0      6.500 K
+svchost.exe                   3896 Services                   0     11.692 K
+wsc_proxy.exe                 3912 Services                   0      5.940 K
+Memory Compression            4000 Services                   0     89.480 K
+svchost.exe                   4072 Services                   0      5.748 K
+svchost.exe                   4204 Services                   0     83.792 K
+svchost.exe                   4288 Services                   0      6.008 K
+WmiPrvSE.exe                  4332 Services                   0     45.108 K
+unsecapp.exe                  4396 Services                   0      4.552 K
+svchost.exe                   4600 Services                   0     54.356 K
+RtkAudioService64.exe         4760 Services                   0      5.708 K
+svchost.exe                   4932 Services                   0      5.900 K
+svchost.exe                   5068 Services                   0      6.428 K
+svchost.exe                   5076 Services                   0      4.156 K
+svchost.exe                   5176 Services                   0     12.972 K
+svchost.exe                   5304 Services                   0     12.000 K
+AVGSvc.exe                    5356 Services                   0    255.028 K
+wlanext.exe                   5440 Services                   0      5.404 K
+conhost.exe                   5448 Services                   0      3.208 K
+spoolsv.exe                   5704 Services                   0      9.112 K
+svchost.exe                   5764 Services                   0     13.208 K
+svchost.exe                   5816 Services                   0      4.776 K
+svchost.exe                   5472 Services                   0      5.176 K
+svchost.exe                   4924 Services                   0     28.232 K
+svchost.exe                   5868 Services                   0      7.608 K
+svchost.exe                   5888 Services                   0     13.560 K
+svchost.exe                   5892 Services                   0     23.920 K
+svchost.exe                   5824 Services                   0      4.656 K
+BTDevMgr.exe                  5960 Services                   0      4.488 K
+svchost.exe                   5916 Services                   0      2.744 K
+RtkBtManServ.exe               584 Services                   0      4.660 K
+svchost.exe                   2880 Services                   0      6.332 K
+svchost.exe                   6176 Services                   0      3.108 K
+svchost.exe                   6192 Services                   0      4.228 K
+svchost.exe                   6212 Services                   0     18.416 K
+svchost.exe                   6368 Services                   0      4.088 K
+svchost.exe                   6464 Services                   0      2.624 K
+svchost.exe                   6676 Services                   0      8.672 K
+svchost.exe                   7640 Services                   0     16.680 K
+svchost.exe                   7040 Services                   0     18.724 K
+SearchIndexer.exe             8916 Services                   0     52.212 K
+svchost.exe                   9276 Services                   0     12.612 K
+svchost.exe                   5940 Services                   0      8.060 K
+svchost.exe                  10424 Services                   0      7.132 K
+aswidsagent.exe              10568 Services                   0     46.188 K
+SecurityHealthService.exe     8008 Services                   0     11.480 K
+svchost.exe                  11416 Services                   0      6.856 K
+dllhost.exe                  13240 Services                   0      8.684 K
+svchost.exe                   8704 Services                   0     14.668 K
+DropboxUpdate.exe             5652 Services                   0      4.408 K
+HPSupportSolutionsFramewo    10216 Services                   0     40.696 K
+svchost.exe                  12520 Services                   0      9.156 K
+SgrmBroker.exe                4304 Services                   0      5.016 K
+svchost.exe                   6724 Services                   0     13.232 K
+svchost.exe                   1632 Services                   0     16.992 K
+svchost.exe                   8176 Services                   0     17.736 K
+svchost.exe                  14232 Services                   0      7.928 K
+svchost.exe                  13148 Services                   0      9.696 K
+svchost.exe                   2024 Services                   0      6.108 K
+svchost.exe                  14732 Services                   0      7.360 K
+csrss.exe                    12196 Console                    6      6.680 K
+winlogon.exe                  4216 Console                    6     17.512 K
+fontdrvhost.exe              11960 Console                    6     12.792 K
+dwm.exe                       2348 Console                    6     56.412 K
+svchost.exe                  13864 Services                   0     16.488 K
+sihost.exe                   14148 Console                    6     25.060 K
+svchost.exe                   1732 Console                    6     26.352 K
+svchost.exe                  13932 Console                    6      9.036 K
+svchost.exe                   1552 Console                    6     32.952 K
+taskhostw.exe                 1504 Console                    6     19.308 K
+explorer.exe                 11584 Console                    6    154.952 K
+taskhostw.exe                 8908 Console                    6      3.352 K
+svchost.exe                   2292 Services                   0      7.432 K
+svchost.exe                   5108 Console                    6     22.360 K
+ctfmon.exe                    7848 Console                    6     17.496 K
+StartMenuExperienceHost.e     6256 Console                    6     64.168 K
+RuntimeBroker.exe            11724 Console                    6     23.192 K
+SearchUI.exe                 14060 Console                    6     90.932 K
+RuntimeBroker.exe             3772 Console                    6     47.788 K
+TabTip.exe                   13468 Console                    6     14.692 K
+svchost.exe                   1968 Services                   0      4.984 K
+LockApp.exe                   8572 Console                    6     36.564 K
+RuntimeBroker.exe             8392 Console                    6     29.924 K
+Hide.me.exe                   4272 Console                    6        344 K
+YourPhone.exe                 8560 Console                    6        308 K
+RuntimeBroker.exe             7044 Console                    6     18.144 K
+svchost.exe                   4672 Services                   0     20.220 K
+SearchProtocolHost.exe        7536 Services                   0     10.672 K
+RuntimeBroker.exe            14296 Console                    6     15.716 K
+RuntimeBroker.exe             7084 Console                    6     17.376 K
+svchost.exe                  11496 Console                    6     19.500 K
+AVGUI.exe                    13084 Console                    6     64.212 K
+unsecapp.exe                 13328 Console                    6      6.868 K
+jusched.exe                   8124 Console                    6      6.876 K
+SystemSettings.exe            5772 Console                    6         60 K
+ApplicationFrameHost.exe     17064 Console                    6     29.468 K
+WinStore.App.exe             11488 Console                    6         36 K
+RuntimeBroker.exe            10480 Console                    6     13.364 K
+AdobeNotificationClient.e    10792 Console                    6        284 K
+RuntimeBroker.exe            14952 Console                    6     12.108 K
+WindowsInternal.Composabl    12960 Console                    6     38.036 K
+AVGUI.exe                    18312 Console                    6     32.772 K
+notepad.exe                  15484 Console                    6     18.900 K
+DbxSvc.exe                   17948 Services                   0      6.840 K
+cmd.exe                      14616 Console                    6      5.200 K
+conhost.exe                   3824 Console                    6     21.768 K
+SynTPEnh.exe                 13516 Console                    6     21.452 K
+smartscreen.exe               1528 Console                    6     22.532 K
+chrome.exe                    3216 Console                    6    165.012 K
+chrome.exe                   14016 Console                    6      6.952 K
+chrome.exe                   15516 Console                    6      9.192 K
+chrome.exe                   18424 Console                    6    201.256 K
+chrome.exe                   16992 Console                    6     37.540 K
+chrome.exe                    9360 Console                    6     60.152 K
+chrome.exe                   17712 Console                    6     43.532 K
+chrome.exe                    3064 Console                    6     47.372 K
+chrome.exe                   18320 Console                    6     34.552 K
+chrome.exe                   12228 Console                    6     34.328 K
+chrome.exe                   11156 Console                    6    221.356 K
+chrome.exe                   16332 Console                    6    138.152 K
+chrome.exe                   12052 Console                    6     68.500 K
+chrome.exe                   16432 Console                    6     48.104 K
+chrome.exe                   12168 Console                    6    107.124 K
+chrome.exe                    9848 Console                    6     76.120 K
+chrome.exe                   17420 Console                    6     68.612 K
+chrome.exe                   17236 Console                    6     16.444 K
+svchost.exe                  11128 Services                   0      7.908 K
+chrome.exe                    9844 Console                    6     37.576 K
+chrome.exe                    3308 Console                    6     41.684 K
+audiodg.exe                  13808 Services                   0     21.312 K
+chrome.exe                   17136 Console                    6     57.548 K
+chrome.exe                   13604 Console                    6     21.980 K
+TrustedInstaller.exe          2640 Services                   0      7.108 K
+TiWorker.exe                  7232 Services                   0     20.204 K
+SearchFilterHost.exe          8692 Services                   0      6.592 K
+WmiPrvSE.exe                  9256 Services                   0      9.228 K
+WmiApSrv.exe                  2424 Services                   0     13.536 K
+tasklist.exe                 17496 Console                    6     12.908 K
