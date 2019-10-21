@@ -1,31 +1,23 @@
-# Getting Started: Collaborative development with Git
+# Team Collaboration With GitHub
 
-## Step 1: Alice creates a new project and hosts it on GitHub
+## Adding Team Members
 
-![install_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/1.png)
+![install_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/11.png)
 
-![install_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/2.png)
+## Pull Requests
 
-![number_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/3.png)
+Membuat ssh key dengan mengikuti langkah-langkah di link https://help.github.com/en/enterprise/2.16/user/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent dan https://help.github.com/en/enterprise/2.16/user/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
 
-## Step 2: Bob copies Alice's project, then submits some simple changes
+![number_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/33.png)
 
-![number_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/4.png)
+![number_3()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/44.png)
 
-## Step 3: Alice reviews and accepts Bob's simple changes
+![number_4()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/55.png)
 
-![string_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/5.png)
+![number_3()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/66.png)
 
-![string_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/6.png)
+## Analytics
 
-## Step 4: Bob makes lots of changes
+![string_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/77.png)
 
-![lists_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/7.png)
-
-![lists_1()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/8.png)
-
-## Step 5: Bob cleans up his work before submitting
-
-![lists_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/9.png)
-
-![lists_3()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/10.png)
+![string_2()](https://github.com/zthomaz/praxis-academy/blob/master/kemampuan-dasar-2/images/88.png)
