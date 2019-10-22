@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "HelloWorld.Main",
+            "projectName": "latihan_2b51eb9b"
+        }
+    ]
+}
