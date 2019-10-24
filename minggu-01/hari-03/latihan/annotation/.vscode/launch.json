@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Derived",
+            "request": "launch",
+            "mainClass": "Derived",
+            "projectName": "annotation_cbfcbee1"
+        }
+    ]
+}

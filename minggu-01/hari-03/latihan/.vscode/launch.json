@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main2",
+            "request": "launch",
+            "mainClass": "generics.Main2",
+            "projectName": "latihan_53dac99d"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SuppressWarningTest",
+            "request": "launch",
+            "mainClass": "annotation.SuppressWarningTest",
+            "projectName": "latihan_53dac99d"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "generics.Main",
+            "projectName": "latihan_53dac99d"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SuppressWarningTest",
+            "request": "launch",
+            "mainClass": "SuppressWarningTest",
+            "projectName": "latihan_53dac99d"
+        }
+    ]
+}
