@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SerialExample",
+            "request": "launch",
+            "mainClass": "SerialExample",
+            "projectName": "SeriDeseri_630c60c6"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "SeriDeseri_630c60c6"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SerialExample",
+            "request": "launch",
+            "mainClass": "SerialExample",
+            "projectName": "latihan_7c63a79f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "latihan_7c63a79f"
+        }
+    ]
+}

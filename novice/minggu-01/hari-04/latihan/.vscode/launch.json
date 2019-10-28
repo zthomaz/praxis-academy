@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CreateObjectDemo",
+            "request": "launch",
+            "mainClass": "CreateObjectDemo",
+            "projectName": "latihan_25f155bb"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Planet",
+            "request": "launch",
+            "mainClass": "Planet",
+            "projectName": "latihan_e81f389e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CreateObjectDemo",
+            "request": "launch",
+            "mainClass": "CreateObjectDemo",
+            "projectName": "latihan_e81f389e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EnumTest",
+            "request": "launch",
+            "mainClass": "EnumTest",
+            "projectName": "latihan_e81f389e"
+        }
+    ]
+}
