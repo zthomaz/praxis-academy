@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SAXParserDemo",
+            "request": "launch",
+            "mainClass": "SAXParserDemo",
+            "projectName": "latihan_ba35c4bc"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CreateXmlFileDemo",
+            "request": "launch",
+            "mainClass": "CreateXmlFileDemo",
+            "projectName": "latihan_ba35c4bc"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DomParserDemo",
             "request": "launch",
             "mainClass": "com.tutorialspoint.xml.DomParserDemo"
